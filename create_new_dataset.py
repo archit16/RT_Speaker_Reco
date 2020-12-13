@@ -63,7 +63,7 @@ for i in range(K):
     ds=np.append(ds, [output], axis=0)
 
 
-np.savetxt("speak_reco_DSP_deep.csv", ds, delimiter=",")
+np.savetxt("speak_reco_DSP_archit.csv", ds, delimiter=",")
 
 stream.stop_stream()
 stream.close()
