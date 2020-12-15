@@ -63,7 +63,15 @@ for i in range(K):
     output = [output]
     std_scaler_x = preprocessing.StandardScaler().fit(X_train)
     X_train_std = std_scaler_x.transform(output)
-    print(SVM_clf.predict(output))
+    #print(SVM_clf.predict(output))
+    y_pred = SVM_clf.predict_proba(X_train_std)
+    if(y_pred[:,0]>0.8):
+        print("Speaker -> Deep")
+    elif(y_pred[:,1]>0.8):
+        print("Speaker -> Archit")
+    else:
+        print("No speaker detected")
+
 
 stream.stop_stream()
 stream.close()

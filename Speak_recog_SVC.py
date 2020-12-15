@@ -37,7 +37,7 @@ Y_test_std = Y_test
 
 
 # SVR algorithm
-SVM_clf = svm.SVC(kernel='rbf', degree = 3)
+SVM_clf = svm.SVC(kernel='rbf', degree = 3, probability = True)
 SVM_clf.fit(X_train_std, Y_train_std)
 dump(SVM_clf, 'speakereco_model.joblib') 
 SVM_accuracy = SVM_clf.score(X_test_std, Y_test_std)
